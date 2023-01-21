@@ -7,19 +7,17 @@ function getRandomHexColor() {
 }
 
 startBtn.addEventListener('click', event => {
-    event.preventDefault();
-    startBtn.disabled = true;
-    stopBtn.disabled = false;
-    randomHex = setInterval(() => {
-        body.style.backgroundColor = `${getRandomHexColor()}`
-    }, 1000)
+  event.preventDefault();
+  startBtn.disabled = true;
+  stopBtn.disabled = false;
+  randomHex = setInterval(() => {
+    body.style.backgroundColor = `${getRandomHexColor()}`;
+  }, 1000);
 });
 
 stopBtn.addEventListener('click', event => {
-    event.preventDefault();
-    stopBtn.disabled = true;
-    startBtn.disabled = false;
-    if (randomHex) {
-        clearInterval(randomHex);
-    }
+  // event.preventDefault();
+  stopBtn.disabled = true;
+  startBtn.disabled = false;
+  clearInterval(randomHex);
 });
